@@ -1,0 +1,6 @@
+streamlit 
+pandas 
+json 
+matplotlib.pyplot 
+matplotlib.patches 
+numpy 
