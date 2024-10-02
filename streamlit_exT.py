@@ -192,7 +192,7 @@ def exT_vis(df, player_name, season='AFL Season 2024'):
 st.title("AFL Season 2024 - exT")
 st.subheader("Filter to a player to review their exT Threat across the 2024 season")
 
-df = pd.read_csv('/Users/jamesives/ExpectedThreat.csv')
+df = pd.read_csv('ExpectedThreat.csv')
 df['player_name'] = df['playerName.givenName'] + " " + df['playerName.surname']
 
 # First, calculate the total exT_gain for each player (by full name)
