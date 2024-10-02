@@ -205,3 +205,6 @@ player_name = st.selectbox('Select a player', df['player_name'].sort_values().un
 
 # Call the visualization function with the selected player
 exT_vis(df, player_name)
+
+
+st.dataframe(df, use_container_width=True)
