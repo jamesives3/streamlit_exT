@@ -206,5 +206,13 @@ player_name = st.selectbox('Select a player', df['player_name'].sort_values().un
 # Call the visualization function with the selected player
 exT_vis(df, player_name)
 
+st.title("exT Table - Player Stats")
 
-st.dataframe(df, use_container_width=True)
+# Create DF table for ordered stats 
+player_stats = df[['player_name','team.teamName','roundNumber','exT_gain']]
+grouped_player_stats = player_stats.groupby(['player_name','roundNumber'])
+exT_table = grouped_player_stats.sum('exT_gain')
+grouped_player_stats = exT_table.groupby(['player_name'])
+exT_table = grouped_player_stats.mean('exT_gain')
+exT_table['points_added'] = exT_table['exT_gain']*6
+st.dataframe(exT_table, use_container_width=True)
