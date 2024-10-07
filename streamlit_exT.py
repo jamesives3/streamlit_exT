@@ -194,7 +194,7 @@ def exT_vis(df, team_name, player_name, season='AFL Season 2024'):
 st.title("AFL Season 2024 - exT")
 st.subheader("Filter to a player to review their exT Threat across the 2024 season")
 #Read data 
-df = pd.read_csv('/Users/jamesives/ExpectedThreat.csv')
+df = pd.read_csv('ExpectedThreat.csv')
 
 #Get player counts
 games = df.groupby('player_name')['roundNumber'].nunique().reset_index()
